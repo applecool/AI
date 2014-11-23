@@ -53,6 +53,11 @@ class Model:
                                         self.features[self.featureNameList[len(self.featureNameList) - 1]] = line[line.find('{')+1: line.find('}')].strip().split(',')
                 file.close()
  
+        '''The TrainClassifier method simply counts the number of co-occurrences of each feature value with each class
+         label, and stores them in the form of 3-tuples. These counts are automatically smoothed by using add-one smoothing
+          as the default value of count for this dictionary is ‘1’. The counts of the labels is also adjusted by incrementing
+           these counts by the total number of observations'''
+           
         def TestClassifier(self, arffFile):
                 file = open(arffFile, 'r')
                 for line in file:
