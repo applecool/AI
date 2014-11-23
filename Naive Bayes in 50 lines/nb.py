@@ -39,7 +39,7 @@ class Model:
                 print probabilityPerLabel
                 return max(probabilityPerLabel, key = lambda classLabel: probabilityPerLabel[classLabel])
                                 
-        '''The above method simply reads the feature names (including class labels), their possible values, 
+        '''The below method simply reads the feature names (including class labels), their possible values, 
            and the feature vectors themselves; and populate the appropriate data structures defined above.'''
 
         def GetValues(self):
