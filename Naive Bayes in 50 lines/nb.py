@@ -28,7 +28,14 @@ class Model:
                 for label in self.labelCounts:  #increase label counts (smoothing). remember that the last feature is actually the label
                         for feature in self.featureNameList[:len(self.featureNameList)-1]:
                                 self.labelCounts[label] += len(self.features[feature])
- 
+        
+        '''The Classify method, that accepts as argument, a single feature vector (as a list), and computes the product of 
+           individual conditional probabilities (smoothed MLE) for each label. The final computed probabilities for each label
+            are stored in the ‘probabilityPerLabel‘ dictionary. In the last line, we return the entry from probabilityPerLabel 
+            which has the highest probability. Note that the multiplication is actually done as addition in the log domain as 
+            the numbers involved are extremely small. Also, one of the factors used in this multiplication, is the prior probability
+             of having this class label.'''
+             
         def Classify(self, featureVector):      #featureVector is a simple list like the ones that we use to train
                 probabilityPerLabel = {}
                 for label in self.labelCounts:
@@ -57,7 +64,7 @@ class Model:
          label, and stores them in the form of 3-tuples. These counts are automatically smoothed by using add-one smoothing
           as the default value of count for this dictionary is ‘1’. The counts of the labels is also adjusted by incrementing
            these counts by the total number of observations'''
-           
+
         def TestClassifier(self, arffFile):
                 file = open(arffFile, 'r')
                 for line in file:
