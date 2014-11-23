@@ -1,6 +1,9 @@
-'''C implementation of the filter. The function spamminess is the soft linear classifer used
+/* Spam filter design: Implemented code in paper "Efficient and Effective Spam Filtering and 
+   Re-ranking for large web datasets" */
+
+/* C implementation of the filter. The function spamminess is the soft linear classifer used
    for spam filtering. The function train implements the online logistic regression gradient
-   descent training function.'''
+   descent training function.*/
 
 #define P 1000081
 #define PREF 35000
