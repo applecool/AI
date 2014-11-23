@@ -14,6 +14,11 @@ class Model:
                 self.featureVectors = []        #contains all the values and the label as the last entry
                 self.labelCounts = collections.defaultdict(lambda: 0)   #these will be smoothed later
  
+        '''The TrainClassifier method simply counts the number of co-occurrences of each feature value with each class 
+           label, and stores them in the form of 3-tuples. These counts are automatically smoothed by using add-one smoothing
+            as the default value of count for this dictionary is ‘1’. The counts of the labels is also adjusted by 
+            incrementing these counts by the total number of observations.'''
+
         def TrainClassifier(self):
                 for fv in self.featureVectors:
                         self.labelCounts[fv[len(fv)-1]] += 1 #udpate count of the label
