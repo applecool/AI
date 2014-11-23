@@ -1,3 +1,4 @@
+#Sweet implementation of Naive Bayes Classifier. Credits to the author
 #Author: Krishnamurthy Koduvayur Viswanathan
  
 from __future__ import division
