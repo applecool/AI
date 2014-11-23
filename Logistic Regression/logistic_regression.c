@@ -19,3 +19,19 @@ float spamminess(unsigned char *page, int n){
    return score;
 }
 
+#define delta 0.002
+train(unsigned char *page, int n, int IsSpam){
+	unsigned i, b, h;
+	if (n > PREF) n = PREF;
+	float p=1/(1+exp(-spamminess(page,n))); 
+	cookie++;
+	b = (page[0]<<16) | (page[1]<<8) | page[2]; 
+	for (i=3;i<n;i++){
+		b = (b<<8) | page[i];
+		h=b%
+		if (dun[h] == cookie) 
+			continue; 
+		dun[h] = cookie;
+		w[h] += (IsSpam-p) * delta;
+	}
+ }
