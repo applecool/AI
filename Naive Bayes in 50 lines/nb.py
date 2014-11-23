@@ -61,7 +61,7 @@ class Model:
                                 print "classifier: " + self.Classify(vector) + " given " + vector[len(vector) - 1]                                
 		
 if __name__ == "__main__":
-        model = Model("/home/tennis.arff")
+        model = Model("/home/tennis.arff") #path to your arff file on your machine
         model.GetValues()
         model.TrainClassifier()
         model.TestClassifier("/home/tennis.arff")
